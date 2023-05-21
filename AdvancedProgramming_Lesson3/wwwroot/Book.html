@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Książek</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <a href="Osoba.html">Osoba</a>
+    <a href="Book.html">Książki</a>
+    <br />
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <h2>Tytuł</h2>
+        <input type="text" id="add-title" placeholder="Tytuł">
+        <h2>Autor</h2>
+        <input type="text" id="add-author" placeholder="Autor">
+        <h2>Gatunek</h2>
+        <input type="text" id="add-genre" placeholder="Gatunek">
+        <h2>Numer ISBN</h2>
+        <input type="text" id="add-isbn" placeholder="Numer ISBN">
+        <input type="submit" value="Dodaj">
+    </form>
+    <div id="spoiler">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" method="POST" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-title">
+            <input type="text" id="edit-author">
+            <input type="text" id="edit-genre">
+            <input type="text" id="edit-isbn">
+            <input type="submit" value="Save">
+        </form>
+    </div>
+    <br />
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Gatunek</th>
+            <th>ISBN</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="books"></tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="Ksiazka.js"></script>
+</body>
+</html>
